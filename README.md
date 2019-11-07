@@ -3,10 +3,10 @@
 ## Toxin is about quickly search and fast downloading for your favorite films
 
 ### Install
+sudo -H pip3 install -r requirements.txt
 
-Linux: sudo -H pip3 install -r requirements.txt
-
-Windows: pip install -r requirements.txt
+### Shell
+python3 src/toxin.py
 
 ### Usage
 
