@@ -8,14 +8,15 @@ from pymorphy2 import MorphAnalyzer
 from PIL import Image
 from torrentool.api import Torrent
 from torrentool.exceptions import BencodeDecodingError
-from os import remove, mkdir
+from os import remove, system
 from libtorrent import session, torrent_info
+import webbrowser as wb
 
 
-URL = 'http://pickfilm.ru/search/{}/1.html'
 fixWord = lambda word, num: MorphAnalyzer().parse(word)[0].make_agree_with_number(num).word
 torrentSize = lambda name: round(Torrent.from_file(name).total_size / 1024 / 1024 / 1024, 2)
-
+URL = 'http://pickfilm.ru/search/{}/1.html'
+DONATE = 'https://money.yandex.ru/to/410017272059424'
 TORRENT = '.torrent'
 IMG = 'img.jpg'
 ERROR = '../lib/error.jpg'
@@ -33,9 +34,9 @@ def torrentSize(name):
 
 
 def getData(url):
-    user = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
-    #MASK = {'user-agent': UserAgent().random}
-    MASK = {'user-agent': user}
+    #user = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+    #MASK = {'user-agent': user}
+    MASK = {'user-agent': UserAgent().random}
     data = get(url, headers=MASK).content
     return data
 

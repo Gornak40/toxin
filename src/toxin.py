@@ -19,13 +19,6 @@ class Toxin:
         self.ex.nextBtn.clicked.connect(self.nextFunc)
         self.ex.donateBtn.clicked.connect(self.donateFunc)
         self.ex.comboBox.currentIndexChanged[str].connect(self.onChange)
-        self.makeFiles()
-    
-    def makeFiles(self):
-        try:
-            mkdir('../kino')
-        except FileExistsError:
-            pass
     
     def onChange(self, text):
         self.downloadLink = readDB(BASE, float(text.split()[0]))
@@ -81,15 +74,13 @@ class Toxin:
     def downloadFunc(self):
         if not self.downloadLink:
             return
+        system('mkdir {} -p'.format(KINO))
         download('{}.torrent'.format(KINO + self.name), self.downloadLink)
         self.ex.statusBar.showMessage('Торрент файл загружен')
         #self.ex.statusBar.showMessage('Скачивание фильма...')
         #Thread(target=self.loadTorrent).start()
     
     def cancelFunc(self):
-        remove(IMG)
-        remove(TORRENT)
-        remove(BASE)
         self.ex.close()
     
     def nextFunc(self):
@@ -100,7 +91,7 @@ class Toxin:
         Thread(target=self.nextH).start()
     
     def donateFunc(self):
-        pass
+        wb.open(DONATE)
     
     def showUI(self):
         self.ex.show()
