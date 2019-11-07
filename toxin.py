@@ -10,6 +10,8 @@ class Toxin:
         self.showUI()
     
     def connect(self):
+        self.links = list()
+        self.downloadLink = str()
         self.ex.searchBtn.clicked.connect(self.searchFunc)
         self.ex.downloadBtn.clicked.connect(self.downloadFunc)
         self.ex.cancelBtn.clicked.connect(self.cancelFunc)
@@ -71,6 +73,8 @@ class Toxin:
         self.ex.statusBar.showMessage('Приятного просмотра')
     
     def downloadFunc(self):
+        if not self.downloadLink:
+            return
         download('{}.torrent'.format(self.name), self.downloadLink)
         self.ex.statusBar.showMessage('Торрент файл загружен')
         #self.ex.statusBar.showMessage('Скачивание фильма...')
