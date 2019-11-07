@@ -19,6 +19,13 @@ class Toxin:
         self.ex.nextBtn.clicked.connect(self.nextFunc)
         self.ex.donateBtn.clicked.connect(self.donateFunc)
         self.ex.comboBox.currentIndexChanged[str].connect(self.onChange)
+        self.makeFiles()
+    
+    def makeFiles(self):
+        try:
+            mkdir('../kino')
+        except FileExistsError:
+            pass
     
     def onChange(self, text):
         self.downloadLink = readDB(BASE, float(text.split()[0]))

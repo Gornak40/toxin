@@ -8,7 +8,7 @@ from pymorphy2 import MorphAnalyzer
 from PIL import Image
 from torrentool.api import Torrent
 from torrentool.exceptions import BencodeDecodingError
-from os import remove
+from os import remove, mkdir
 from libtorrent import session, torrent_info
 
 
@@ -18,7 +18,7 @@ torrentSize = lambda name: round(Torrent.from_file(name).total_size / 1024 / 102
 
 TORRENT = '.torrent'
 IMG = 'img.jpg'
-ERROR = 'error.jpg'
+ERROR = '../lib/error.jpg'
 BASE = '.db'
 KINO = '../kino/'
 
