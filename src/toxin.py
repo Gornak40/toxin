@@ -1,6 +1,5 @@
 from tools import *
 from gui import *
-from db import *
 
 
 class Toxin:

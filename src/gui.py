@@ -43,7 +43,7 @@ class ToxinUI(QWidget):
         self.donateLbl.setText("""Автор: Александр Горбунов (Gornak40)
 Почта: s-kozelsk@yandex.ru
 ВК/Телеграм: @gornak40
-Github: @Gornak40""")
+GitHub: @Gornak40""")
         self.donateBtn = QPushButton()
         self.donateBtn.setText('Спасибо')
         self.statusBar = QStatusBar()
