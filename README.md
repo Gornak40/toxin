@@ -1,6 +1,6 @@
 # toxin
 
-## Toxin is a tool to quickly search and download movies on torrent
+## Toxin is about quickly search and fast downloading for your favorite films
 
 ### Usage
 
@@ -12,3 +12,4 @@ If you want to skip film: press "Follow"
 
 Else: choose the size from the lower combobox and press "Download"
 
+### Enjoy your watch )))
