@@ -1,0 +1,9 @@
+fake_useragent
+requests
+bs4
+lxml
+pymorphy2
+pymorphy2-dicts-ru
+pillow
+torrentool
+pyqt5
