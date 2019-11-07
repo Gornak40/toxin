@@ -1,5 +1,6 @@
 from tools import *
 from gui import *
+from db import *
 
 
 class Toxin:
@@ -20,7 +21,8 @@ class Toxin:
         self.ex.comboBox.currentIndexChanged[str].connect(self.onChange)
     
     def onChange(self, text):
-        self.downloadLink = self.collection[float(text.split()[0])]
+        self.downloadLink = readDB(float(text.split()[0]))
+#        self.downloadLink = self.collection[float(text.split()[0])]
     
     def searchH(self):
         name = self.ex.lineEdit.text()
@@ -38,9 +40,9 @@ class Toxin:
         self.name = F.name
         self.index += 1
         self.sizes = [torrentSize(download('.torrent', link)) for link in F.tors]
-        self.collection = dict()
-        for size, tor in zip(self.sizes, F.tors):
-            self.collection[size] = tor
+        makeDB(self.sizes, F.tors)
+#        for size, tor in zip(self.sizes, F.tors):
+#            self.collection[size] = tor
         try:
             self.ex.picLbl.setPixmap(QPixmap(imgResize(download('img.jpg', F.img))))
         except OSError:
@@ -83,6 +85,7 @@ class Toxin:
     def cancelFunc(self):
         remove('img.jpg')
         remove('.torrent')
+        remove('.db')
         self.ex.close()
     
     def nextFunc(self):
