@@ -1,5 +1,5 @@
-from tools import *
-from gui import *
+from src.tools import *
+from src.gui import *
 
 
 class Toxin:

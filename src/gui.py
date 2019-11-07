@@ -8,7 +8,7 @@ from PyQt5.QtGui import (
     QIcon, QPixmap
     )
 from PyQt5 import QtGui
-from tools import ICON
+from src.tools import ICON
 
 
 class ToxinUI(QWidget):

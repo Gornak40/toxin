@@ -9,7 +9,7 @@ from PIL import Image
 from torrentool.api import Torrent
 from torrentool.exceptions import BencodeDecodingError
 from os import remove, system
-from libtorrent import session, torrent_info
+#from libtorrent import session, torrent_info
 from sqlite3 import connect
 import webbrowser as wb
 
@@ -18,12 +18,12 @@ fixWord = lambda word, num: MorphAnalyzer().parse(word)[0].make_agree_with_numbe
 torrentSize = lambda name: round(Torrent.from_file(name).total_size / 1024 / 1024 / 1024, 2)
 URL = 'http://pickfilm.ru/search/{}/1.html'
 DONATE = 'https://money.yandex.ru/to/410017272059424'
-TORRENT = '.torrent'
-IMG = 'img.jpg'
-ERROR = '../lib/error.jpg'
-BASE = '.db'
-KINO = '../kino/'
-ICON = '../lib/icon.ico'
+TORRENT = 'src/.torrent'
+IMG = 'src/img.jpg'
+ERROR = 'lib/error.jpg'
+BASE = 'src/.db'
+KINO = 'kino/'
+ICON = 'lib/icon.ico'
 
 
 def torrentSize(name):
