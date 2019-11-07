@@ -8,6 +8,7 @@ from PyQt5.QtGui import (
     QIcon, QPixmap
     )
 from PyQt5 import QtGui
+from tools import ICON
 
 
 class ToxinUI(QWidget):
@@ -19,7 +20,7 @@ class ToxinUI(QWidget):
     def initUI(self):
         self.resize(300, 200)
         self.setWindowTitle('Toxin')
-        self.setWindowIcon(QIcon('icon.ico'))
+        self.setWindowIcon(QIcon(ICON))
         self.searchBtn = QPushButton()
         self.searchBtn.setText('Поиск')
         self.lineEdit = QLineEdit()

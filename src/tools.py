@@ -21,6 +21,7 @@ IMG = 'img.jpg'
 ERROR = '../lib/error.jpg'
 BASE = '.db'
 KINO = '../kino/'
+ICON = '../lib/icon.ico'
 
 
 def torrentSize(name):
