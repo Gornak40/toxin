@@ -74,7 +74,7 @@ class Toxin:
         if not self.downloadLink:
             return
         system('mkdir {} -p'.format(KINO))
-        download('{}.torrent'.format(KINO + self.name), self.downloadLink)
+        download('{}.torrent'.format(KINO + self.name.replace(' ', '\\ ')), self.downloadLink)
         self.ex.statusBar.showMessage('Торрент файл загружен')
         #self.ex.statusBar.showMessage('Скачивание фильма...')
         #Thread(target=self.loadTorrent).start()
