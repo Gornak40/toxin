@@ -1,9 +1,14 @@
 # toxin
-Toxin is a tool to quickly search and download movies on torrent
-## now russian text
-### Toxin целиком написан на Python3 и заточен под Unix-подобные ОС
-### При разработке использовалось около 15 разнообразных библиотек
-### Приложение модульно, представлено тремя файлами:
-Основной класс Toxin (toxin.py)
-Все объектно-независимые функции, классы, константы, используемые в основном классе (tools.py)
-Графический интерфейс на PyQt5 (gui.py)
+
+## Toxin is a tool to quickly search and download movies on torrent
+
+### Usage
+
+Enter the film name into the upper space, press "Search"
+
+With a few seconds the application will offfer you some films
+
+If you want to skip film: press "Follow"
+
+Else: choose the size from the lower combobox and press "Download"
+
