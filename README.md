@@ -6,7 +6,7 @@
 sudo -H pip3 install -r requirements.txt
 
 ### Shell
-python3 src/toxin.py
+python3 toxin.py
 
 ### Usage
 
